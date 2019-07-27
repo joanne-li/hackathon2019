@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import {Grid, Image, Segment, Select, Container, Form, Button} from 'semantic-ui-react'
 import axios from 'axios'
 import Item from './Item.js'
+import Banner from './Banner';
+
 
 const sortOptions = [
   {key: 'abc', value: 'Alphabetical', text: 'Alphabetical'},
@@ -20,7 +22,7 @@ class ProductList extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount(){
-    axios.get('https://api.jsonbin.io/b/5d3c47b9ea04da211dc38b4e')
+    axios.get('https://inspired-victor-144517.appspot.com/product')
       .then((result) => {
           this.setState({ products: result.data });
             }
@@ -28,7 +30,7 @@ class ProductList extends Component {
   }
   handleClick (e) {
     e.preventDefault();
-    axios.get('https://api.jsonbin.io/b/5d3c47b9ea04da211dc38b4e')
+    axios.get('https://inspired-victor-144517.appspot.com/product')
       .then((result) => {
         this.setState({products: result.data});
       });
@@ -36,6 +38,7 @@ class ProductList extends Component {
   render() {
     var productItems = this.state.products.map((item) => {
       return (
+        <div>
           <Grid.Column>
           <Item name={item['product_name']}
             price={item['price']}
@@ -46,10 +49,13 @@ class ProductList extends Component {
             sustainability={item['score']}
             img={item['product_img'] }/>
           </Grid.Column>
+          </div>
       )});
 
 
     return (
+      <div>
+        <Banner />
       <Container text>
       <Form>
         <Form.Group>
@@ -73,6 +79,7 @@ class ProductList extends Component {
           )})}
       </Grid>
       </Container>
+      </div>
     );
   }
 }
