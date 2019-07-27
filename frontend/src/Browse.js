@@ -14,7 +14,6 @@ class Browse extends Component {
           <Footer />
           <Item />
           <Search />
-          <Shopping />
 
         </div>
       </div>
