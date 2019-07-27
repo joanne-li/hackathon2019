@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
 class Login extends Component {
@@ -21,7 +21,6 @@ class Login extends Component {
             </div>
             <button class="ui button"><NavLink to="./browse" style={{color: 'white'}}>Login</NavLink></button>
             <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
-            // Need to route this to checker
          </form>
          </Grid.Column>
          <Grid.Column width={2}>

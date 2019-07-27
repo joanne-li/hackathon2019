@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid } from 'semantic-ui-react'
+import {Grid } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
 class SignUp extends Component {
@@ -64,7 +64,6 @@ class SignUp extends Component {
          </div>
          <button class="ui button"><NavLink to="./browse" style={{color: 'white'}}>Sign Up</NavLink></button>
          <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
-         // Need to split this for customer and businesses
       </form>
       </Grid.Column>
       <Grid.Column width={2}>

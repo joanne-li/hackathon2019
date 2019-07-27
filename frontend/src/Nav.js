@@ -1,46 +1,24 @@
 import React, { Component } from 'react';
-import { Button, Grid, Menu } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
-
+import {Menu, Image } from 'semantic-ui-react'
+import { NavLink} from 'react-router-dom'
+import logo from './img/logo.png'
 class Nav extends Component {
 
   render() {
     return (
-      <div>
-         <Grid>
+        <Menu secondary>
+          <Menu.Item name='logo'> <NavLink to="./"><Image src = {logo} size='small'></Image></NavLink></Menu.Item>
+          <Menu.Item name='about'><NavLink to="./about"> About</NavLink> </Menu.Item>
+          <Menu.Item name='shop'> <NavLink to="./browse">Shop </NavLink></Menu.Item>
+          <Menu.Item name='Explore'><NavLink to="./businesslist"> Explore </NavLink></Menu.Item>
+          <Menu.Item name='business'><NavLink to="./register-my-business"> For Business</NavLink></Menu.Item>
+          <Menu.Menu position='right'>
+            <Menu.Item><NavLink to="./dashboard"> Dashboard </NavLink></Menu.Item>
+            <Menu.Item><NavLink to="./login"> Login </NavLink></Menu.Item>
+            <Menu.Item><NavLink to = "./signup"> Sign Up </NavLink></Menu.Item>
+          </Menu.Menu>
 
-         <Grid.Row>
-            <Grid.Column width={1}>
-            </Grid.Column>
-            <Grid.Column width={2}>
-            <h1><NavLink to="./" style={{color: 'black'}}>ECONOX</NavLink></h1>
-            </Grid.Column>
-            <Grid.Column width={9}>
-            </Grid.Column>
-            <Grid.Column width={3}>
-               <Button.Group size='large'>
-                  <Button><NavLink to="./login" style={{color: 'white'}}>Login</NavLink></Button>
-                  <Button><NavLink to="./signup" style={{color: 'white'}}>Sign Up</NavLink></Button>
-               </Button.Group>
-            </Grid.Column>
-            <Grid.Column width={1}>
-            </Grid.Column>
-         </Grid.Row>
-
-         <Grid.Row centered columns={2}>
-            <Grid.Column>
-               <Button.Group size='large'>
-                  <Button><NavLink to="./" style={{color: 'white'}}>Home</NavLink></Button>
-                  <Button>About</Button>
-                  <Button><NavLink to="./browse" style={{color: 'white'}}>Shop</NavLink></Button>
-                  <Button><NavLink to="./" style={{color: 'white'}}>For Business</NavLink></Button>
-               </Button.Group>
-            </Grid.Column>
-         </Grid.Row>
-
-         </Grid>
-
-      </div>
+      </Menu>
     );
   }
 }

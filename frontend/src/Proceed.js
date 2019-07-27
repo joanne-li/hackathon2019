@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid, List, Image, Label, Menu, Table } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import {Grid} from 'semantic-ui-react'
 import HEREMap from 'here-maps-react'
 
 class Cart extends Component {
