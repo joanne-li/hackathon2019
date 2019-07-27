@@ -280,13 +280,13 @@ class DummyData(Resource):
         business_list.append(Business_Model.create_business(business_data4))
 
         brand_list = Brand_Model.query().fetch()
-        product_name_list = ["Chocolate", "Beef", "Milk Chocolate",  "Chicken","Celery","Carrot"]
-        product_image_list = ["https://images.app.goo.gl/dxYEv1M7wcGWzQnNA",
-                            "https://images.app.goo.gl/8RR6bDgxdyYKjxwQ9",
-                              "https://images.app.goo.gl/jk9WesvKDtxhUxU29",
-                              "https://images.app.goo.gl/fLsPZ5Y7SiQbxj2t8",
-                              "https://images.app.goo.gl/zx3hQLnJ9UAxkdkh6",
-                              "https://images.app.goo.gl/i5CxF32wA6s5x5TP8"
+        product_name_list = ["Chocolate", "Beef", "Snickers",  "Chicken","Celery","Carrot"]
+        product_image_list = ["https://www.britishcornershop.co.uk/img/large/BRK024.jpg",
+                            "http://www.cargillgroundbeef.com/images/img-learn-packaging-overwrap.jpg",
+                              "https://www.packworld.com/sites/default/files/field/image/snickers001.jpg",
+                              "https://www.addmaster.co.uk/file/2tdlbcn8-xnyxhavo-chickenpackaging.jpg?width=679&height=496&fill=true",
+                              "https://cdn2.hubspot.net/hubfs/240798/p-main-2.3oz%20Snack%20Pack%20main%20photo.jpg",
+                              "https://www.nnz.com/upload/cache/4C71948FBDE65F5DDF44308CDCA559BB.jpg"
                               ]
         length_product = len(product_name_list) - 1
 
