@@ -10,9 +10,7 @@ class BusinessList extends Component {
 
     return (
       <div>
-      <Grid container columns={4}>
-        {productItems}
-      </Grid>
+      
       <Dashboard/>
       </div>
     );
