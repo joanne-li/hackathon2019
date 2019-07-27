@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Grid } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
-class Login extends Component {
+class SignUp extends Component {
   render() {
     return (
       <div>
@@ -75,4 +75,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;

@@ -12,7 +12,8 @@ import Browse from './Browse';
 import Login from './Login';
 import SignUp from './SignUp';
 // import Register from './Register';
-// import Cart from './Cart';
+import Cart from './Cart';
+import Proceed from './Proceed';
 // import Profile from './Profile';
 import Footer from './Footer';
 
@@ -28,6 +29,8 @@ class App extends Component {
         <Route path='/browse' component={Browse} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
+        <Route path='/cart' component={Cart} />
+        <Route path='/proceed' component={Proceed} />
         <Footer />
       </div>
       </BrowserRouter>
