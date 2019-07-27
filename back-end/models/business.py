@@ -5,7 +5,7 @@ from stock import Stock_Model
     Creates the business
 '''
 class Business_Model(ndb.Model):
-    full_name = ndb.StringProperty()
+    fullname = ndb.StringProperty()
     description = ndb.StringProperty()
     industry = ndb.StringProperty()
     address = ndb.StringProperty()

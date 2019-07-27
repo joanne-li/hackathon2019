@@ -183,6 +183,40 @@ class Filter_location(Resource):
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
+@api.route('/filter/name/<type>/<direction>')
+class Filter_name(Resource):
+
+    # Handle GET Requests
+    def get(self, type, direction):
+        # Assume that type will be (Product|User|Business|Brand)
+        kind = type + "_Model"
+        if direction == "Desc":
+            dir = "-"
+        else:
+            dir = ""
+        # Initialise Query
+        if kind == "Brand_Model":
+            query = Brand_Mode.query()
+            query.order = [dir + "full_name"]
+        else:
+            if kind == "Product_Model":
+                query = Product_Model.query()
+            elif kind == "Business_Model":
+                query = Business_Model.query()
+            elif kind == "User_Model":
+                query = User_Model.query()
+
+            print(query)
+            #query.order = [dir + "name"]
+
+
+        obj_list=query.fetch()
+        print(obj_list)
+
+        return 200
+
+
+
 @api.route('/create/brand')
 class Brand(Resource):
     @api.doc(description="Creates Brand") # Adds documentation
@@ -270,10 +304,6 @@ class DummyData(Resource):
                 "price": random.randint(1,20)
             }
             Product_Model.create_product(product_data, score, brand)
-<<<<<<< HEAD
-        return {'message': 'Completed'},200
-=======
         response = jsonify({'message': 'Completed'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
->>>>>>> 01245fd8b513c59f6d8cf2e928492750e3389223
