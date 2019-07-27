@@ -23,7 +23,7 @@ class App extends Component {
       <BrowserRouter>
       <div>
         <Nav />
-        <Browse />
+        <Route path='/browse' component={Browse} />
         <Footer />
       </div>
       </BrowserRouter>
