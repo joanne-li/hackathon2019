@@ -15,5 +15,3 @@ class User_Model(ndb.Model):
         person.name = user_data.get("name")
         person.reward = 0
         person.put()
-
-
