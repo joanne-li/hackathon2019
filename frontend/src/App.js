@@ -42,6 +42,7 @@ class App extends Component {
         <Route path='/signup' component={SignUp} />
         <Route path='/businesslist' component={BusinessList} />
         <Route path='/sam' component={Dashboard} />
+        <Route path='/my-dashboard' component={BusinessDashboard} />
       </div>
       </BrowserRouter>
 

@@ -11,7 +11,7 @@ class Nav extends Component {
           <Menu.Item name='about'> About </Menu.Item>
           <Menu.Item name='shop'> <NavLink to="./browse">Shop </NavLink></Menu.Item>
           <Menu.Item name='Explore'><NavLink to="./businesslist"> Explore </NavLink></Menu.Item>
-          <Menu.Item name='business'> For Business </Menu.Item>
+          <Menu.Item name='business'><NavLink to="./register-my-business"> For Business</NavLink></Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item><NavLink to="./login"> Login </NavLink></Menu.Item>
             <Menu.Item><NavLink to = "./signup"> Sign Up </NavLink></Menu.Item>
