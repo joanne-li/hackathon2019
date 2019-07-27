@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Container, Header, Image, Divider, List} from 'semantic-ui-react'
 import profile from './img/profile.jpg';
 
-
+// OR PROFILE OF BUSINESS
 class Dashboard extends Component {
   render() {
     return (
