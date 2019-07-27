@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import itemImage from './img/cutlery.jpg';
 import './css/Item.css';
-import {Icon} from 'semantic-ui-react';
+import {Icon, Image} from 'semantic-ui-react';
 
 
 // Need to get picture of item from img folder
@@ -22,7 +22,7 @@ class Item extends Component {
     return (
       <div className="ui card">
       <div className="image">
-        <img src={this.state.img} alt= {this.state.name} style={{height:150, width:100}}/>
+        <Image src={this.state.img} alt= {this.state.name} style={{height: 200, backgroundSize: 'cover'}}/>
       </div>
       <div className="content">
         <a className="header">{this.state.name.slice(0,10)}</a>

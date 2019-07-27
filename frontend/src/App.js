@@ -11,13 +11,9 @@ import './css/App.css';
 import Nav from './Nav';
 import Home from './Home';
 import Browse from './Browse';
-
+import Banner from './Banner';
 import Login from './Login';
 import SignUp from './SignUp';
-
-import Banner from './Banner';
-// import Login from './Login';
-
 // import Register from './Register';
 // import Cart from './Cart';
 import Dashboard from './Dashboard';
