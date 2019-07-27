@@ -16,13 +16,16 @@ import Login from './Login';
 import SignUp from './SignUp';
 // import Register from './Register';
 // import Cart from './Cart';
-import Dashboard from './Dashboard';
+import Explore from './Explore';
 import Footer from './Footer';
 import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
 import BusinessRegistration from './BusinessRegistration';
 import BusinessList from './BusinessList';
 import About from './About';
+
+
+
 class App extends Component {
   render() {
     return (
@@ -36,12 +39,11 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/browse' component={Browse} />
         <Route path='/me' component={UserDashboard} />
-        <Route path='/my-business' component={BusinessDashboard} />
         <Route path='/register-my-business' component={BusinessRegistration} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
         <Route path='/businesslist' component={BusinessList} />
-        <Route path='/sam' component={Dashboard} />
+        <Route path='/sam' component={Explore} />
         <Route path='/my-dashboard' component={BusinessDashboard} />
         <Route path='/about' component={About}/>
       </div>
@@ -52,14 +54,3 @@ class App extends Component {
 }
 
 export default App;
-
-/**
-
-// <Nav />
-// <Route exact path='/' component={Home} />
-// <Route path='/browse' component={Browse} />
-// <Route path='/login' component={Login} />
-// <Route path='/register' component={Register} />
-// <Route path='/cart' component={Cart} />
-// <Route path='/me' component={Profile} />
-// <Footer />  */

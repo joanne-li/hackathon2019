@@ -64,7 +64,6 @@ class Login extends Component {
          </div>
          <button class="ui button"><NavLink to="./browse" style={{color: 'white'}}>Sign Up</NavLink></button>
          <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
-         // Need to split this for customer and businesses
       </form>
       </Grid.Column>
       <Grid.Column width={2}>

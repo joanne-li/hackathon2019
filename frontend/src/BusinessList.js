@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Grid, Image, Segment, List, Container, Header, Divider} from 'semantic-ui-react'
 import axios from 'axios'
 import Item from './Item.js'
-import Dashboard from './Dashboard'
 import { NavLink } from 'react-router-dom'
 import profile from './img/profile.jpg';
 

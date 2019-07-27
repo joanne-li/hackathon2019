@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Menu, Image } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import logo from './img/logo.png'
 class Nav extends Component {
 
@@ -13,6 +13,7 @@ class Nav extends Component {
           <Menu.Item name='Explore'><NavLink to="./businesslist"> Explore </NavLink></Menu.Item>
           <Menu.Item name='business'><NavLink to="./register-my-business"> For Business</NavLink></Menu.Item>
           <Menu.Menu position='right'>
+            <Menu.Item><NavLink to="./dashboard"> Dashboard </NavLink></Menu.Item>
             <Menu.Item><NavLink to="./login"> Login </NavLink></Menu.Item>
             <Menu.Item><NavLink to = "./signup"> Sign Up </NavLink></Menu.Item>
           </Menu.Menu>
