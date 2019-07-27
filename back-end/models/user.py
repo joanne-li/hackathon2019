@@ -3,14 +3,15 @@ from google.appengine.ext import ndb
 '''
     Creates the user
 '''
-class User(ndb.Model):
+class User_Model(ndb.Model):
     name = ndb.StringProperty()
     reward = ndb.IntegerProperty()
     # shoppingList =
 
     @staticmethod
-    def create_user(self, user_data):
-        person = User()
+    def create_user(user_data):
+        print(user_data.get('name'))
+        person = User_Model()
         person.name = user_data.get("name")
         person.reward = 0
         person.put()
