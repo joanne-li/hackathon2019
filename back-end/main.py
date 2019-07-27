@@ -196,25 +196,23 @@ class Filter_name(Resource):
             dir = ""
         # Initialise Query
         if kind == "Brand_Model":
-            query = Brand_Mode.query()
-            query.order = [dir + "full_name"]
-        else:
-            if kind == "Product_Model":
-                query = Product_Model.query()
-            elif kind == "Business_Model":
-                query = Business_Model.query()
-            elif kind == "User_Model":
-                query = User_Model.query()
-
-            print(query)
-            #query.order = [dir + "name"]
+            query = Brand_Model.query().order(Brand_Model.name)
+        elif kind == "Product_Model":
+            query = Product_Model.query().order(Product_Model.product_name)
+        elif kind == "Business_Model":
+            query = Business_Model.query().order(Business_Model.full_name)
+        elif kind == "User_Model":
+            query = User_Model.query().order(User_Model.name)
 
 
-        obj_list=query.fetch()
-        print(obj_list)
-
-        return 200
-
+        obj_list = query.fetch()
+        dict_list = list()
+        for i in obj_list:
+            dict_list.append(i.to_dict())
+        response = jsonify(dict_list)
+        print(response)
+        response.headers.add('Access-Control-Allow-Origin', "*")
+        return response
 
 
 @api.route('/create/brand')
