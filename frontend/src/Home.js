@@ -5,7 +5,10 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 import bgimg from './img/bg0.jpg';
 import christine from './img/christine.jpeg';
-// import joanne from
+import joanne from './img/joanne.jpg';
+import phoebe from './img/phoebe.jpg';
+import alec from './img/alec.jpg';
+import damin from './img/damin.jpg';
 
 const bgStyle = {
   backgroundImage: 'url(' + bgimg + ')',
@@ -52,7 +55,7 @@ class Section extends Component {
     return(
       <div id='about'>
         <div class='ui main text container'>
-          <h1 text={this.state.title} />
+          <h1>{this.state.title}</h1>
           {this.body}
           <div style={{paddingBottom:50}} class='ui divider' />
         </div>
@@ -65,7 +68,6 @@ class Section extends Component {
 const AboutBody = () => (
   <div>
   <Segment raised>
-    <h2>Plan ahead and shop with Econox</h2>
     <p>Econox aims to provide balance in your day. Our platform allows the eco-aware consumer to plan and customise their shopping experience. </p>
   </Segment>
 
@@ -77,28 +79,31 @@ const TeamList = props => (
       <List horizontal>
         <List.Item>
           <List.Content>
-            <List.Header>Phoebe</List.Header>Project Leader
+          <Image avatar size='tiny' circular src={phoebe} /><br /><br />
+            <List.Header>Phoebe</List.Header>Back End Developer
           </List.Content>
         </List.Item>
-
         <List.Item>
           <List.Content>
+          <Image avatar size='tiny' circular src={alec} /><br /><br />
             <List.Header>Alec</List.Header>Back End Developer
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Content>
+          <Image avatar size='tiny' circular src={damin} /><br /><br />
             <List.Header>Damin</List.Header>Front End Developer
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Content>
+            <Image avatar size='tiny' circular src={joanne} /><br /><br />
             <List.Header>Joanne</List.Header>Front End Developer
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Content>
-            <Image size='small' circular src={christine} /><br /><br />
+            <Image avatar size='tiny' circular src={christine} /><br /><br />
             <List.Header>Christine</List.Header>Front End Developer
           </List.Content>
         </List.Item>
@@ -108,7 +113,7 @@ const TeamList = props => (
 const HomeAll = () => (
   <div>
   <Home />
-  <Section tag='about' title='About Us' />
+  <Section tag='about' title='Plan Ahead & Shop With Econox' />
   <Section tag='team' title='Team' />
   </div>
 );
