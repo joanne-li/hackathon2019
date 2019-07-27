@@ -10,11 +10,8 @@ class Browse extends Component {
     return (
       <div>
         <div>
-          <Nav />
-          <Footer />
           <Item />
           <Search />
-
         </div>
       </div>
     );
