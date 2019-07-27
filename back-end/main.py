@@ -250,13 +250,17 @@ class DummyData(Resource):
         business_list.append(Business_Model.create_business(business_data4))
 
         brand_list = Brand_Model.query().fetch()
-        product_name_list = ["Chocolate", "Beef", "Snickers",  "Chicken","Celery","Carrot"]
-        product_image_list = ["https://www.britishcornershop.co.uk/img/large/BRK024.jpg",
-                            "http://www.cargillgroundbeef.com/images/img-learn-packaging-overwrap.jpg",
-                              "https://www.packworld.com/sites/default/files/field/image/snickers001.jpg",
+        product_name_list = ["Chocolate Cake", "Steak", "Lollies",  "Chicken","Celery","Carrot","Apple","Milk","Cheese","Salmon"]
+        product_image_list = ["https://www.recipetineats.com/wp-content/uploads/2018/03/Chocolate-Cake_1-480x270.jpg",
+                            "https://paleoleap.com/pictures/j-paleo/surf-turf-dinner/surf-turf-dinner-preparation-2.jpg",
+                              "https://www.eroma.com.au/media/catalog/product/cache/1/thumbnail/400x/17f82f742ffe127f42dca9de82fb58b1/s/o/sour_patch_worms.jpg",
                               "https://www.addmaster.co.uk/file/2tdlbcn8-xnyxhavo-chickenpackaging.jpg?width=679&height=496&fill=true",
-                              "https://cdn2.hubspot.net/hubfs/240798/p-main-2.3oz%20Snack%20Pack%20main%20photo.jpg",
-                              "https://www.nnz.com/upload/cache/4C71948FBDE65F5DDF44308CDCA559BB.jpg"
+                              "https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2014/01/celery-stalks.jpg",
+                              "https://www.burpee.com/dw/image/v2/ABAQ_PRD/on/demandware.static/-/Sites-masterCatalog_Burpee/default/dwc89a2c64/Images/Product%20Images/prod000639/prod000639.jpg?sw=320&sh=378&sm=fit",
+                              "https://supplier.onezoo.com.au/images/2017-09-091504949930765.jpg",
+                              "https://www.worldatlas.com/r/w728-h425-c728x425/upload/b1/98/3d/shutterstock-568076731.jpg",
+                              "http://cdn.shopify.com/s/files/1/0181/6997/products/Shenley_Station_clear_cut_web_600x.jpg?v=1543182677",
+                              "https://www.drweil.com/wp-content/uploads/2016/09/diet-nutrition_food-safety_worms-in-salmon_6922773-600x450.jpg"
                               ]
         length_product = len(product_name_list) - 1
 
@@ -271,7 +275,7 @@ class DummyData(Resource):
                 "product_img": product_image_list[product_index],
                 "stock_level": random.randint(1,50),
                 "business_key": business.key.urlsafe(),
-                "price": random.randint(1,20)
+                "price": random.randint(5,20)
             }
             Product_Model.create_product(product_data, score, brand)
         response = jsonify({'message': 'Completed'})
