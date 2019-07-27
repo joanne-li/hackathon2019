@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Grid } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
+import { NavLink } from 'react-router-dom'
 
 class Nav extends Component {
   render() {
@@ -12,14 +12,14 @@ class Nav extends Component {
             <Grid.Column width={1}>
             </Grid.Column>
             <Grid.Column width={2}>
-            <h1>ECONOX</h1>
+            <h1><NavLink to="./" style={{color: 'black'}}>ECONOX</NavLink></h1>
             </Grid.Column>
             <Grid.Column width={9}>
             </Grid.Column>
             <Grid.Column width={3}>
                <Button.Group size='large'>
-                  <Button>Login</Button>
-                  <Button>Sign Up</Button>
+                  <Button><NavLink to="./login" style={{color: 'white'}}>Login</NavLink></Button>
+                  <Button><NavLink to="./signup" style={{color: 'white'}}>Sign Up</NavLink></Button>
                </Button.Group>
             </Grid.Column>
             <Grid.Column width={1}>
@@ -29,10 +29,10 @@ class Nav extends Component {
          <Grid.Row centered columns={2}>
             <Grid.Column>
                <Button.Group size='large'>
-                  <Button>Home</Button>
+                  <Button><NavLink to="./" style={{color: 'white'}}>Home</NavLink></Button>
                   <Button>About</Button>
-                  <Button>Shop</Button>
-                  <Button>For Business</Button>
+                  <Button><NavLink to="./browse" style={{color: 'white'}}>Shop</NavLink></Button>
+                  <Button><NavLink to="./" style={{color: 'white'}}>For Business</NavLink></Button>
                </Button.Group>
             </Grid.Column>
          </Grid.Row>
