@@ -33,7 +33,6 @@ class ProductList extends Component {
       <Grid container columns={4}>
         {productItems}
       </Grid>
-      /*<Dashboard/>*/
       </div>
     );
   }
