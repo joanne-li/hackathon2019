@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_restplus import Resource, Api, fields, reqparse
 from models.business import Business_Model
 from models.stock import Stock_Model
@@ -85,9 +85,11 @@ class User(Resource):
     @api.expect(user_model) # Tells class to expect a "user_model"
     def post(self): # Function: Executes for Post Requests
         args = parser.parse_args() # Grabs POST request data and parses it to create dictionary.
-        User_Model.create_user(args) # Instantiates User Class from Model
-        return {'message': 'User has been created', 'user_key': person.key.urlsage()}, 200
-
+        person = User_Model.create_user(args) # Instantiates User Class from Model
+        response = jsonify({"message": 'User has been created', 'user_key': person.key.urlsafe()})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        # return {'message': 'User has been created', 'user_key': person.key.urlsage()}, 200
+        return response
 
 @api.route('/create/business')
 class Business(Resource):
@@ -96,7 +98,9 @@ class Business(Resource):
     def post(self):
         args = parser.parse_args()
         company = Business_Model.create_business(args)
-        return {'message': 'Business has been created', 'business_key': company.key.urlsafe()}, 200
+        response = jsonify({'message': 'Business has been created', 'business_key': company.key.urlsafe()})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 @api.route('/create/product')
@@ -111,16 +115,23 @@ class Create_Product(Resource):
         brand = Brand_Model.query(Brand_Model.name == brand_name).get()
         score = determine_score(brand.score,industry)
         Product_Model.create_product(args,score,brand)
-        return {'message':'Product has been created', 'name':args.get('product_name')}, 200
+        response = jsonify({'message':'Product has been created', 'name':args.get('product_name')})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 @api.route('/product/<product_name>')
 class Each_Product(Resource):
     def get(self, product_name):
         product = Product_Model.query(Product_Model.product_name == product_name).get()
         if product:
-            return {'message': 'Successfully found', 'product': json.dumps(product.to_dict())},200
+            response = jsonify({'message': 'Successfully found', 'product': product.to_dict()})
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            return response
         else:
-            return {'message': 'failed'},400
+            response = jsonify({'message': 'failed'})
+            response.headers.add('Access-Control-Allow-Origin', '*')
+            response.status_code = 400
+            return response
 
 @api.route('/product')
 class All_Product(Resource):
@@ -129,18 +140,22 @@ class All_Product(Resource):
         dict_format = list()
         for product in list_product:
             dict_format.append(product.to_dict())
-        return json.dumps(dict_format), 200
+
+        response = jsonify(dict_format)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 
 '''
 Parses in the km radius
 Filters all the business in the area and returns all products in the area
 '''
-@api.route('/filter/<int:km>')
+@api.route('/filter/<float:km>')
 class Filter_location(Resource):
     def get(self, km):
-        distance = km
-        # distance = km*1000 #distance in metres
+        #distance = km
+        print(km)
+        distance = km*1000 #distance in metres
         business_list = Business_Model.query().fetch()
         business_within = list()
         for businessObj in business_list:
@@ -164,9 +179,9 @@ class Filter_location(Resource):
                     for i in product_list:
                         business_within.append(i.to_dict())
 
-        prop_json = json.dumps(business_within)
-
-        return {"message": "Successful", "product": prop_json},200
+        response = jsonify(business_within)
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
 
 @api.route('/create/brand')
 class Brand(Resource):
@@ -182,6 +197,13 @@ class Brand(Resource):
 @api.route('/dummydata')
 class DummyData(Resource):
     def get(self):
+        Brand_Model.create_brand("Steggles",7)
+        Brand_Model.create_brand("Magnum", 4)
+        Brand_Model.create_brand("Woolworths", 5)
+        Brand_Model.create_brand('Cooks Cuts', 4)
+        Brand_Model.create_brand("Cadbury", 6)
+
+
         business_list = list()
         business_data1 = {
             'full_name': 'Vinnies',
@@ -217,6 +239,7 @@ class DummyData(Resource):
             'address': 'Shop 14/200 Barangaroo Avenue',
             'post_code': 2000
         }
+
         business_list.append(Business_Model.create_business(business_data1))
         business_list.append(Business_Model.create_business(business_data2))
         business_list.append(Business_Model.create_business(business_data3))
@@ -247,4 +270,10 @@ class DummyData(Resource):
                 "price": random.randint(1,20)
             }
             Product_Model.create_product(product_data, score, brand)
+<<<<<<< HEAD
         return {'message': 'Completed'},200
+=======
+        response = jsonify({'message': 'Completed'})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+>>>>>>> 01245fd8b513c59f6d8cf2e928492750e3389223
