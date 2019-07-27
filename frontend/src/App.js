@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import './App.css';
+
+import './css/App.css';
 
 /**
 * import other components here
@@ -9,14 +10,16 @@ import './App.css';
 import Nav from './Nav';
 import Home from './Home';
 import Browse from './Browse';
-// import Login from './Login';
+import Login from './Login';
+import SignUp from './SignUp';
 // import Register from './Register';
 // import Cart from './Cart';
-// import Profile from './Profile';
+import Dashboard from './Dashboard';
 import Footer from './Footer';
 import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
 import BusinessRegistration from './BusinessRegistration';
+
 
 
 class App extends Component {
@@ -30,7 +33,11 @@ class App extends Component {
         <Route path='/me' component={UserDashboard} />
         <Route path='/my-business' component={BusinessDashboard} />
         <Route path='/register-my-business' component={BusinessRegistration} />
+        <Route path ='/dashboard' component={Dashboard}/>
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
         <Footer />
+
       </div>
       </BrowserRouter>
 
