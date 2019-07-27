@@ -1,0 +1,3 @@
+back-end/lib/
+*.pyc
+.idea/
