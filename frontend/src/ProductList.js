@@ -30,8 +30,6 @@ class ProductList extends Component {
 
     return (
       <div>
-<<<<<<< HEAD
-=======
         <Banner />
       <Container>
       <Segment raised>
@@ -42,10 +40,10 @@ class ProductList extends Component {
         <Form.Button onClick={this.handleClick}>Submit</Form.Button>
       </Form>
       </Segment>
->>>>>>> d1c540b0204cc160a19a6fc07960d5a3964e7913
       <Grid container columns={4}>
         {productItems}
       </Grid>
+      </Container>
       </div>
     );
   }
