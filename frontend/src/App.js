@@ -16,7 +16,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 // import Register from './Register';
 // import Cart from './Cart';
-import Dashboard from './Dashboard';
+import Explore from './Explore';
 import Footer from './Footer';
 import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
@@ -39,7 +39,7 @@ class App extends Component {
         <Route path='/me' component={UserDashboard} />
         <Route path='/my-business' component={BusinessDashboard} />
         <Route path='/register-my-business' component={BusinessRegistration} />
-        <Route path ='/dashboard' component={Dashboard}/>
+        <Route path ='/explore' component={Explore}/>
         <Footer />
 
       </div>

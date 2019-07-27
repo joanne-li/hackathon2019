@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Container, Input, Select, TextArea, Step, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
+import Banner from './Banner';
 
 var steps = [
   {
@@ -65,6 +66,7 @@ class BusinessRegistration extends Component {
   render() {
     return (
       <div>
+      <Banner />
       <Container textAlign='center'>
       <h1 class='text2-black'>Register Your Business</h1>
 

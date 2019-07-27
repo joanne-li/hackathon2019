@@ -57,6 +57,7 @@ class ProductList extends Component {
       <div>
         <Banner />
       <Container>
+      <h2>Browse Products</h2>
       <Segment raised>
       <Form>
         <Form.Group>
@@ -88,4 +89,3 @@ class ProductList extends Component {
 
 
 export default ProductList;
-

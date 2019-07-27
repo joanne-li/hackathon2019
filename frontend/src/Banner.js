@@ -14,9 +14,10 @@ const bannerStyle = {
 class Banner extends Component {
   render() {
     return (
+      <div>
       <div class='bg ui segment App-img' style={bannerStyle}>
-
-
+      </div>
+      <br /><br />
       </div>
     );
   }

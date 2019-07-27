@@ -118,6 +118,7 @@ const TeamList = props => (
 const HomeAll = () => (
   <div>
   <Home />
+  <br /><br />
   <Section tag='about' title='Plan Ahead & Shop With Econox' />
   <Section tag='team' title='Team' />
   </div>

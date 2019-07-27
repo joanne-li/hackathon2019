@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 //import { Route } from 'react-router-dom';
 import {Container, Header, Image, Divider, List} from 'semantic-ui-react'
 import profile from './img/profile.jpg';
+import Banner from './Banner';
 
 
-class Dashboard extends Component {
+
+class Explore extends Component {
   render() {
     return (
       <div>
+      <Banner />
         <Container>
-        <Header size='huge'>Shop Info</Header>
+        <Header size='huge'>Support our local businesses</Header>
         <Divider />
         <Header as='h2'>
           Sam's Groceries
@@ -48,4 +51,4 @@ class Dashboard extends Component {
 }
 
 
-export default Dashboard;
+export default Explore;
