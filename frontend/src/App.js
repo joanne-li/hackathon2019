@@ -3,9 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 
 import './css/App.css';
-import Item from './Item';
-import Search from './Search';
-import Shopping from './Shopping';
+
 /**
 * import other components here
 */
@@ -28,9 +26,7 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/browse' component={Browse} />
         <Footer />
-        <Item />
-        <Search />
-        <Shopping />
+
       </div>
       </BrowserRouter>
 
