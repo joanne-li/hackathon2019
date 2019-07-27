@@ -7,12 +7,12 @@ class Nav extends Component {
     return (
       <div>
          <Grid>
-
+         
          <Grid.Row>
             <Grid.Column width={1}>
             </Grid.Column>
             <Grid.Column width={2}>
-            <h1>econox</h1>
+            <h1>ECONOX</h1>
             </Grid.Column>
             <Grid.Column width={9}>
             </Grid.Column>
