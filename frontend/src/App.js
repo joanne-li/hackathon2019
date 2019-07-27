@@ -21,6 +21,7 @@ import Footer from './Footer';
 import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
 import BusinessRegistration from './BusinessRegistration';
+import BusinessList from './BusinessList';
 
 class App extends Component {
   render() {
@@ -37,11 +38,10 @@ class App extends Component {
         <Route path='/me' component={UserDashboard} />
         <Route path='/my-business' component={BusinessDashboard} />
         <Route path='/register-my-business' component={BusinessRegistration} />
-        <Route path ='/dashboard' component={Dashboard}/>
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
-        <Footer />
-
+        <Route path='/businesslist' component={BusinessList} />
+        <Route path='/sam' component={Dashboard} />
       </div>
       </BrowserRouter>
 
