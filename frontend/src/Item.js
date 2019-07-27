@@ -11,7 +11,7 @@ class Item extends Component {
     this.state = {
       name: this.props.name,
       price: this.props.price,
-      business: this.props.business,
+      industry: this.props.industry,
       sustainability: this.props.sustainability,
       img: this.props.img,
     }
