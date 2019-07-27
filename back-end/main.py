@@ -8,6 +8,12 @@ from models.brand import Brand_Model
 from sustain_score import determine_score
 import json
 import random
+import requests
+import requests_toolbelt.adapters.appengine
+
+
+requests_toolbelt.adapters.appengine.monkeypatch()
+
 #Sets up api token and where it should be
 authorizations = {
     'apikey': {
@@ -133,9 +139,35 @@ Filters all the business in the area and returns all products in the area
 @api.route('/filter/<int:km>')
 class Filter_location(Resource):
     def get(self, km):
-        return {},200
-#        parse to api- returns all the businesses in the area
-#         all_product = Product_Model.query(Product_Model.b == )
+        distance = km
+        # distance = km*1000 #distance in metres
+        business_list = Business_Model.query().fetch()
+        business_within = list()
+        for businessObj in business_list:
+            addr_key_words = businessObj.address + " " + businessObj.suburb
+            api_key = "AIzaSyCaDAqjsE4idap5H2XNOcZu5BE-GXBGRnA"
+            # UNSW Geo Coords
+            lat = -33.917329664
+            long = 151.225332432
+            api_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
+            api_url += "location=" + str(lat) + "," + str(long)
+            api_url += "&" + "radius=" + str(distance)
+            api_url += "&keyword=" + addr_key_words
+            api_url += "&key=" + api_key
+            r = requests.get(api_url)
+            myDict = json.loads(r.content)
+
+            if myDict.get('status') == "OK":
+                bus_key = businessObj.key.urlsafe()
+                product_list =Product_Model.query(Product_Model.business_key == bus_key).fetch()
+                if product_list:
+                    for i in product_list:
+                        business_within.append(i.to_dict())
+
+        prop_json = json.dumps(business_within)
+
+        return {"message": "Successful", "product": prop_json},200
+
 
 
 

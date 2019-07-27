@@ -21,6 +21,7 @@ class Business_Model(ndb.Model):
         company.address = user_data.get("address")
         company.suburb = user_data.get("suburb")
         company.post_code = user_data.get("post_code")
+
         company.put()
         return company
 
