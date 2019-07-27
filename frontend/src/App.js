@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { BrowserRouter} from 'react-router-dom';
+=======
+import { BrowserRouter, Route} from 'react-router-dom';
+>>>>>>> shopping
 import './css/App.css';
 import Item from './Item';
-
+import Search from './Search';
+import Shopping from './Shopping';
 /**
 * import other components here
 */
@@ -26,6 +31,8 @@ class App extends Component {
         <Route path='/browse' component={Browse} />
         <Footer />
         <Item />
+        <Search />
+        <Shopping />
       </div>
       </BrowserRouter>
 
