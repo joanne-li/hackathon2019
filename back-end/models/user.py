@@ -1,9 +1,9 @@
 from google.appengine.ext import ndb
-from model import Model
+# from model import Model
 '''
     Creates the user
 '''
-class User(Model):
+class User(ndb.Model):
     name = ndb.StringProperty()
     reward = ndb.IntegerProperty()
     # shoppingList =
@@ -12,8 +12,7 @@ class User(Model):
     def create_user(self, user_data):
         person = User()
         person.name = user_data.get("name")
-        if user_data.get("reward"):
-            person.reward = int(user_data.get("reward"))
+        person.reward = 0
         person.put()
 
 

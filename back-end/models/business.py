@@ -1,10 +1,10 @@
 from google.appengine.ext import ndb
-from model import Model
+# from model import Model
 from stock import Stock
 '''
     Creates the business
 '''
-class Business(Model):
+class Business(ndb.Model):
     full_name = ndb.StringProperty()
     description = ndb.StringProperty()
     industry = ndb.StringProperty()
