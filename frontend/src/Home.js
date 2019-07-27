@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 import bgimg from './img/bg0.jpg';
+import christine from './img/christine.jpeg';
+// import joanne from 
 
 const bgStyle = {
   backgroundImage: 'url(' + bgimg + ')',
@@ -42,6 +44,8 @@ class Section extends Component {
     this.state = { tag: props.tag, title: props.title};
     if (props.tag === 'about') {
       this.body = ( <AboutBody /> );
+    } else if (props.tag === 'team') {
+      this.body = ( <TeamList /> );
     }
   }
   render() {
@@ -65,35 +69,37 @@ const AboutBody = () => (
     <p>Econox aims to provide balance in your day. Our platform allows the eco-aware consumer to plan and customise their shopping experience. </p>
   </Segment>
 
-  <Segment raised>
-    <Label as='a' ribbon color='black'>The Team</Label>
-    Friends
-    <TeamList />
-  </Segment>
   </div>
 );
-//
+
 const TeamList = props => (
     <div class='teamlist'>
       <List horizontal>
-        <List.Item><Image avatar src={charley} />
+        <List.Item>
           <List.Content>
-            <List.Header>Charley Wong</List.Header>Project Leader
+            <List.Header>Phoebe</List.Header>Project Leader
           </List.Content>
         </List.Item>
-        <List.Item><Image avatar src={christine} />
+
+        <List.Item>
           <List.Content>
-            <List.Header>Christine Bui</List.Header>Front End Developer
+            <List.Header>Alec</List.Header>Back End Developer
           </List.Content>
         </List.Item>
-        <List.Item><Image avatar src={je} />
+        <List.Item>
           <List.Content>
-            <List.Header>Pang Je Ho</List.Header>Back End Developer
+            <List.Header>Damin</List.Header>Front End Developer
           </List.Content>
         </List.Item>
-        <List.Item><Image avatar src={gautham} />
+        <List.Item>
           <List.Content>
-            <List.Header>Gautham Ontri</List.Header>Back End Developer
+            <List.Header>Joanne</List.Header>Front End Developer
+          </List.Content>
+        </List.Item>
+        <List.Item>
+          <List.Content>
+            <Image size='small' circular src={christine} /><br /><br />
+            <List.Header>Christine</List.Header>Front End Developer
           </List.Content>
         </List.Item>
       </List>
@@ -103,6 +109,7 @@ const HomeAll = () => (
   <div>
   <Home />
   <Section tag='about' title='About Us' />
+  <Section tag='team' title='Team' />
   </div>
 );
 export default HomeAll;
