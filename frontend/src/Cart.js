@@ -109,6 +109,30 @@ class Cart extends Component {
              <Table.Cell>${price[2]}</Table.Cell>
              <Table.Cell>${total[2]}</Table.Cell>
           </Table.Row>
+          <Table.Row>
+             <Table.Cell></Table.Cell>
+             <Table.Cell></Table.Cell>
+             <Table.Cell>Sub Total:</Table.Cell>
+             <Table.Cell>$23</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+
+      <Table celled>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Previous Points</Table.HeaderCell>
+            <Table.HeaderCell>Earnt Today</Table.HeaderCell>
+            <Table.HeaderCell>New Total</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>100 Points</Table.Cell>
+            <Table.Cell>23 Points</Table.Cell>
+            <Table.Cell>123 Points</Table.Cell>
+          </Table.Row>
         </Table.Body>
       </Table>
 
