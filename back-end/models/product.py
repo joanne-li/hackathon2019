@@ -1,20 +1,24 @@
 from google.appengine.ext import ndb
-from model import Model
+'''Class to store product information '''
 
 class Product_Model(ndb.Model):
-    """ Class to store product information """
-    productName = ndb.StringProperty();
-    productType = ndb.StringProperty();
-    productImg = ndb.StringProperty(); # Stores Image link as string
-    brandKey = ndb.StringProperty();
+    product_name = ndb.StringProperty()
+    product_industry = ndb.StringProperty()
+    product_img = ndb.StringProperty() # Stores Image link as string
+    brand_key= ndb.StringProperty()
+    score = ndb.FloatProperty()
 
-    @staticmethod
-    def create_product(self, product_data):
     """ Initialises Product Object """
-        product = Product()
-        print(product_date.get("productName"))
-        product.productName = product_data.get("productName")
-        product.productType = product_data.get("productType")
-        product.productImg = product_data.get("productImg")
-        product.brandKey = product_data.get("brandKey")
+    @staticmethod
+    def create_product(product_data, score,brand):
+        product = Product_Model()
+        print(product_data.get("product_name"))
+        product.product_name = product_data.get("product_name")
+        product.product_industry = product_data.get("product_industry")
+        product.product_img = product_data.get("product_img")
+        product.brand_key = brand.key.urlsafe()
+        product.score = score
         product.put()
+        return product
+
+

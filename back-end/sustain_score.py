@@ -1,4 +1,4 @@
-def determine_score(brand, product_industry):
+def determine_score(brand_score=5, product_industry=5):
     '''
     The higher the score, the better it is
     '''
@@ -11,13 +11,6 @@ def determine_score(brand, product_industry):
         'Vegetables': 9,
         'Confectionary': 1
     }
-    brand_score = {
-        'Steggles': 7,
-        'Magnum': 4,
-        'Woolworths': 5,
-        'Cooks Cuts': 4,
-        'Cadbury': 6
-    }
-    unique_brand_score = brand_score.get(brand)
+
     unique_industry = industry_type_score.get(product_industry)
-    return weight_brand * unique_brand_score + weight_industry * unique_industry
+    return weight_brand * brand_score + weight_industry * unique_industry
