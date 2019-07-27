@@ -13,4 +13,4 @@ def determine_score(brand_score=5, product_industry=5):
     }
 
     unique_industry = industry_type_score.get(product_industry)
-    return weight_brand * brand_score + weight_industry * unique_industry
+    return round(weight_brand * brand_score + weight_industry * unique_industry,2)
