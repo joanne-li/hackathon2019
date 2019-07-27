@@ -12,7 +12,7 @@ class ProductList extends Component {
     this.state = { products: [], productState: []}
   }
   componentDidMount(){
-    axios.get('https://api.jsonbin.io/b/5d3c1363ea04da211dc3767d')
+    axios.get('https://inspired-victor-144517.appspot.com')
       .then((result) => {
           this.setState({products: result.data.products})
             }
@@ -33,7 +33,6 @@ class ProductList extends Component {
       <Grid container columns={4}>
         {productItems}
       </Grid>
-      <Dashboard/>
       </div>
     );
   }
