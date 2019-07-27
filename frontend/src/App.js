@@ -7,7 +7,7 @@ import Item from './Item';
 * import other components here
 */
 import Nav from './Nav';
-// import Home from './Home';
+import Home from './Home';
 import Browse from './Browse';
 // import Login from './Login';
 // import Register from './Register';
@@ -22,7 +22,8 @@ class App extends Component {
       <BrowserRouter>
       <div>
         <Nav />
-        <Browse />
+        <Route exact path='/' component={Home} />
+        <Route path='/browse' component={Browse} />
         <Footer />
         <Item />
       </div>
