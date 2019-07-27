@@ -168,10 +168,6 @@ class Filter_location(Resource):
 
         return {"message": "Successful", "product": prop_json},200
 
-
-
-
-
 @api.route('/create/brand')
 class Brand(Resource):
     @api.doc(description="Creates Brand") # Adds documentation
