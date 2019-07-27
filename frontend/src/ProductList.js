@@ -56,13 +56,15 @@ class ProductList extends Component {
     return (
       <div>
         <Banner />
-      <Container text>
+      <Container>
+      <Segment raised>
       <Form>
         <Form.Group>
           <Form.Field control={Select} options={sortOptions} label='Sort by...' />
         </Form.Group>
         <Form.Button onClick={this.handleClick}>Submit</Form.Button>
       </Form>
+      </Segment>
       <Grid container columns={4}>
         {this.state.products.map((item) => {
           return (
