@@ -7,7 +7,7 @@ class Nav extends Component {
     return (
       <div>
          <Grid>
-         
+
          <Grid.Row>
             <Grid.Column width={1}>
             </Grid.Column>
@@ -39,7 +39,6 @@ class Nav extends Component {
 
          </Grid>
       </div>
-
     );
   }
 }

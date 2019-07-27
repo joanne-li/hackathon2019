@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-
-import logo from './logo.svg';
 import './App.css';
 
 /**
@@ -16,6 +14,7 @@ import Browse from './Browse';
 // import Cart from './Cart';
 // import Profile from './Profile';
 import Footer from './Footer';
+
 
 
 class App extends Component {
