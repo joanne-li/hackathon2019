@@ -6,6 +6,7 @@ class Login extends Component {
   render() {
     return (
       <div>
+         <h1 style={{textAlign: 'center'}}>Login</h1>
          <Grid>
          <Grid.Column width={2}></Grid.Column>
          <Grid.Column width={12}>
@@ -18,7 +19,7 @@ class Login extends Component {
                <label>Password</label>
                <input type="text" name="last-name" placeholder="Password"></input>
             </div>
-            <button class="ui button" type="submit">Submit</button>
+            <button class="ui button" type="submit">Login</button>
             <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
             // Need to route this to checker
          </form>
