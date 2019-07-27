@@ -16,7 +16,6 @@ import Browse from './Browse';
 // import Profile from './Profile';
 import Footer from './Footer';
 
-
 class App extends Component {
   render() {
     return (

@@ -6,19 +6,29 @@ import './css/Item.css';
 // but this is handled from backend
 
 class Item extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: this.props.name,
+      price: this.props.price,
+      industry: this.props.industry,
+      sustainability: this.props.sustainability,
+      img: this.props.img,
+    }
+  }
   render() {
     return (
       <div className="ui card">
       <div className="image">
-        <img src={itemImage} alt= "cutlery"/>
+        <img src={this.state.img} alt= {this.state.name}/>
       </div>
       <div className="content">
-        <a className="header">Cutlery set</a>
+        <a className="header">{this.state.name}</a>
         <div className="meta">
-          <span className="date">$5</span>
+          <span className="date">{this.state.price}</span>
         </div>
         <div className="description">
-          Be ecofriendly when you snack on the go.
+          {this.state.sustainability}
         </div>
       </div>
       </div>

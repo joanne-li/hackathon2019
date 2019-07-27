@@ -10,6 +10,9 @@ import phoebe from './img/phoebe.jpg';
 import alec from './img/alec.jpg';
 import damin from './img/damin.jpg';
 
+
+import {Container} from 'semantic-ui-react';
+
 const bgStyle = {
   backgroundImage: 'url(' + bgimg + ')',
   backgroundSize: 'cover',
@@ -110,6 +113,8 @@ const TeamList = props => (
       </List>
     </div>
 );
+
+
 const HomeAll = () => (
   <div>
   <Home />

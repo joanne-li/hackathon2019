@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/Search.css';
+import {Container} from 'semantic-ui-react';
 
 // Need to get picture of item from img folder
 // but this is handled from backend
@@ -15,8 +16,10 @@ class Search extends Component {
           <option value="products">Products</option>
         </select>
         <div className="ui button">Search</div>
+        <div className="ui container"></div>
       </div>
     );
   }
 }
+
 export default Search;
