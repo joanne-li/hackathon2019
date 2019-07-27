@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Button, Grid } from 'semantic-ui-react'
+import { Button, Grid, Menu } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
 
 class Nav extends Component {
+
   render() {
     return (
       <div>
@@ -38,6 +39,7 @@ class Nav extends Component {
          </Grid.Row>
 
          </Grid>
+
       </div>
     );
   }

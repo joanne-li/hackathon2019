@@ -13,13 +13,13 @@ class Login extends Component {
          <form class="ui form">
             <div class="field">
                <label>Username</label>
-               <input type="text" name="first-name" placeholder="Username"></input>
+               <input type="text" name="username" placeholder="Username"></input>
             </div>
             <div class="field">
                <label>Password</label>
-               <input type="text" name="last-name" placeholder="Password"></input>
+               <input type="password" name="password" placeholder="Password"></input>
             </div>
-            <button class="ui button" type="submit">Login</button>
+            <button class="ui button"><NavLink to="./browse" style={{color: 'white'}}>Login</NavLink></button>
             <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
             // Need to route this to checker
          </form>

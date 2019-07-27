@@ -12,12 +12,49 @@ class Login extends Component {
       <Grid.Column width={12}>
       <form class="ui form">
          <div class="field">
+            <label>Name</label>
+            <div class="two fields">
+               <div class="field">
+                 <input type="text" name="first-name" placeholder="First Name"></input>
+               </div>
+               <div class="field">
+                 <input type="text" name="last-name" placeholder="Last Name"></input>
+               </div>
+            </div>
+         </div>
+         <div class="field">
             <label>Username</label>
-            <input type="text" name="first-name" placeholder="Username"></input>
+            <input type="text" name="username" placeholder="Username"></input>
+         </div>
+         <div class="field">
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Email Address"></input>
+         </div>
+         <div class="field">
+           <label>Address</label>
+           <div class="fields">
+              <div class="four wide field">
+                <input type="text" name="street-num" placeholder="No:"></input>
+              </div>
+              <div class="twelve wide field">
+                  <input type="text" name="street-address" placeholder="Street Address"></input>
+              </div>
+           </div>
+           <div class="fields">
+              <div class="ten wide field">
+                  <input type="text" name="suburb" placeholder="Suburb"></input>
+              </div>
+              <div class="three wide field">
+                  <input type="text" name="post-code" placeholder="Post Code"></input>
+              </div>
+              <div class="three wide field">
+                  <input type="text" name="state" placeholder="State"></input>
+              </div>
+           </div>
          </div>
          <div class="field">
             <label>Password</label>
-            <input type="text" name="last-name" placeholder="Password"></input>
+            <input type="password" name="password" placeholder="Password"></input>
          </div>
          <div class="field">
            <div class="ui checkbox">
@@ -25,7 +62,7 @@ class Login extends Component {
              <label>I agree to the Terms and Conditions</label>
            </div>
          </div>
-         <button class="ui button" type="submit">Sign Up</button>
+         <button class="ui button"><NavLink to="./browse" style={{color: 'white'}}>Sign Up</NavLink></button>
          <button class="ui button"><NavLink to="./" style={{color: 'white'}}>Cancel</NavLink></button>
          // Need to split this for customer and businesses
       </form>
