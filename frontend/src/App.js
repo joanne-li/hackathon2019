@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import {Container} from 'semantic-ui-react';
 
 
 import './css/App.css';
@@ -15,7 +16,7 @@ import Login from './Login';
 import SignUp from './SignUp';
 // import Register from './Register';
 // import Cart from './Cart';
-// import Profile from './Profile';
+import Dashboard from './Dashboard';
 import Footer from './Footer';
 import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
@@ -25,8 +26,11 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-      <div>
+
         <Nav />
+
+      <div>
+
 
         <Route exact path='/' component={Home} />
         <Route path='/browse' component={Browse} />
@@ -35,6 +39,7 @@ class App extends Component {
         <Route path='/me' component={UserDashboard} />
         <Route path='/my-business' component={BusinessDashboard} />
         <Route path='/register-my-business' component={BusinessRegistration} />
+        <Route path ='/dashboard' component={Dashboard}/>
         <Footer />
 
       </div>
