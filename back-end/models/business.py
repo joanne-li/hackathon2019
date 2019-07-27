@@ -30,6 +30,7 @@ class Business(Model):
         stock.business_key = self.key.urlsafe()
         stock.product_key = stock_data.get("product_key")
         stock.price = stock_data.get("price")
+        stock.put()
 
     #
     # {

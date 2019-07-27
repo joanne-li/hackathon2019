@@ -14,5 +14,6 @@ class User(Model):
         person.name = user_data.get("name")
         if user_data.get("reward"):
             person.reward = int(user_data.get("reward"))
+        person.put()
 
 
