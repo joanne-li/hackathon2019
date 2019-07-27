@@ -1,10 +1,10 @@
 from google.appengine.ext import ndb
 # from model import Model
-from stock import Stock
+from stock import Stock_Model
 '''
     Creates the business
 '''
-class Business(ndb.Model):
+class Business_Model(ndb.Model):
     full_name = ndb.StringProperty()
     description = ndb.StringProperty()
     industry = ndb.StringProperty()
@@ -13,8 +13,8 @@ class Business(ndb.Model):
     post_code = ndb.IntegerProperty()
 
     @staticmethod
-    def create_business(self, user_data):
-        company = Business()
+    def create_business(user_data):
+        company = Business_Model()
         company.full_name = user_data.get("full_name")
         company.description = user_data.get("description")
         company.industry = user_data.get("industry")
@@ -22,15 +22,9 @@ class Business(ndb.Model):
         company.suburb = user_data.get("suburb")
         company.post_code = user_data.get("post_code")
         company.put()
+        return company
 
-    @staticmethod
-    def create_stock(self, stock_data):
-        stock = Stock()
-        stock.level = stock_data.get("stock_level")
-        stock.business_key = self.key.urlsafe()
-        stock.product_key = stock_data.get("product_key")
-        stock.price = stock_data.get("price")
-        stock.put()
+
 
     #
     # {

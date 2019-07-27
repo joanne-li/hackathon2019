@@ -10,10 +10,10 @@ class User_Model(ndb.Model):
 
     @staticmethod
     def create_user(user_data):
-        print(user_data.get('name'))
         person = User_Model()
         person.name = user_data.get("name")
         person.reward = 0
         person.put()
+        return person
 
 
