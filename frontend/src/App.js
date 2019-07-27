@@ -11,7 +11,8 @@ import Nav from './Nav';
 import Home from './Home';
 import Browse from './Browse';
 import Banner from './Banner';
-// import Login from './Login';
+import Login from './Login';
+import SignUp from './SignUp';
 // import Register from './Register';
 // import Cart from './Cart';
 // import Profile from './Profile';
@@ -26,6 +27,8 @@ class App extends Component {
 
         <Route exact path='/' component={Home} />
         <Route path='/browse' component={Browse} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
         <Footer />
 
       </div>
