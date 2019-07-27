@@ -1,5 +1,6 @@
 from google.appengine.ext import ndb
 from model import Model
+from stock import Stock
 '''
     Creates the business
 '''
@@ -11,13 +12,25 @@ class Business(Model):
     suburb = ndb.StringProperty()
     post_code = ndb.IntegerProperty()
 
-    def add_photo(self, description, url):
+    @staticmethod
+    def create_business(self, user_data):
+        company = Business()
+        company.full_name = user_data.get("full_name")
+        company.description = user_data.get("description")
+        company.industry = user_data.get("industry")
+        company.address = user_data.get("address")
+        company.suburb = user_data.get("suburb")
+        company.post_code = user_data.get("post_code")
+        company.put()
 
-        photo = PropertyPhoto()
-        photo.description = description
-        photo.url = url
-        photo.property = self.key
-        photo.put()
+    @staticmethod
+    def create_stock(self, stock_data):
+        stock = Stock()
+        stock.level = stock_data.get("stock_level")
+        stock.business_key = self.key.urlsafe()
+        stock.product_key = stock_data.get("product_key")
+        stock.price = stock_data.get("price")
+
     #
     # {
     #     "Naked Foods Organic & Health Foods Bulk": {

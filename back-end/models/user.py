@@ -8,10 +8,11 @@ class User(Model):
     reward = ndb.IntegerProperty()
     # shoppingList =
 
-    def add_photo(self, description, url):
+    @staticmethod
+    def create_user(self, user_data):
+        person = User()
+        person.name = user_data.get("name")
+        if user_data.get("reward"):
+            person.reward = int(user_data.get("reward"))
 
-        photo = PropertyPhoto()
-        photo.description = description
-        photo.url = url
-        photo.property = self.key
-        photo.put()
+
