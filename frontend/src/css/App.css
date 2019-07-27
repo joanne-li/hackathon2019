@@ -28,8 +28,18 @@
   font-size:60px;
 }
 
+.text1-black {
+  color:black;
+  font-size:60px;
+}
+
 .text2-white {
   color:white;
+  font-size: 26px;
+}
+
+.text2-black {
+  color:black;
   font-size: 26px;
 }
 

@@ -17,6 +17,9 @@ import SignUp from './SignUp';
 // import Cart from './Cart';
 // import Profile from './Profile';
 import Footer from './Footer';
+import UserDashboard from './UserDashboard';
+import BusinessDashboard from './BusinessDashboard';
+import BusinessRegistration from './BusinessRegistration';
 
 class App extends Component {
   render() {
@@ -29,6 +32,9 @@ class App extends Component {
         <Route path='/browse' component={Browse} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
+        <Route path='/me' component={UserDashboard} />
+        <Route path='/my-business' component={BusinessDashboard} />
+        <Route path='/register-my-business' component={BusinessRegistration} />
         <Footer />
 
       </div>
