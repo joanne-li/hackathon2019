@@ -20,8 +20,6 @@ class User(Resource):
     # @api.response(200, 'Successful determined the revenue')
     # @api.response(400, 'One or more of the input parameters is invalid')
     # @login_required
-    # @api.doc(security='apikey')
-    # @api.expect(features_model)
     # def post(self):
     #     args = predict_parser.parse_args()
     #     args['english'] = True if args['english'] == 'True' else False
