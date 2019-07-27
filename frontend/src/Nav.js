@@ -8,7 +8,7 @@ class Nav extends Component {
     return (
         <Menu secondary>
           <Menu.Item name='logo'> <NavLink to="./"><Image src = {logo} size='small'></Image></NavLink></Menu.Item>
-          <Menu.Item name='about'> About </Menu.Item>
+          <Menu.Item name='about'><NavLink to="./about"> About</NavLink> </Menu.Item>
           <Menu.Item name='shop'> <NavLink to="./browse">Shop </NavLink></Menu.Item>
           <Menu.Item name='Explore'><NavLink to="./businesslist"> Explore </NavLink></Menu.Item>
           <Menu.Item name='business'><NavLink to="./register-my-business"> For Business</NavLink></Menu.Item>

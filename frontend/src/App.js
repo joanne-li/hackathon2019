@@ -22,7 +22,7 @@ import UserDashboard from './UserDashboard';
 import BusinessDashboard from './BusinessDashboard';
 import BusinessRegistration from './BusinessRegistration';
 import BusinessList from './BusinessList';
-
+import About from './About';
 class App extends Component {
   render() {
     return (
@@ -43,6 +43,7 @@ class App extends Component {
         <Route path='/businesslist' component={BusinessList} />
         <Route path='/sam' component={Dashboard} />
         <Route path='/my-dashboard' component={BusinessDashboard} />
+        <Route path='/about' component={About}/>
       </div>
       </BrowserRouter>
 

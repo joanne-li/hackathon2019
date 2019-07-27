@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Container, Statistic, Icon, Image, Header, Divider} from 'semantic-ui-react'
+import diagram from './img/diagram.png'
 
 class BusinessDashboard extends Component {
   render() {
@@ -11,7 +12,7 @@ class BusinessDashboard extends Component {
           <Divider />
           <Statistic.Group>
           <Statistic>
-            <Statistic.Value>21</Statistic.Value>
+            <Statistic.Value>31</Statistic.Value>
             <Statistic.Label>Customers</Statistic.Label>
           </Statistic>
 
@@ -36,6 +37,11 @@ class BusinessDashboard extends Component {
             <Statistic.Label>New customers</Statistic.Label>
           </Statistic>
       </Statistic.Group>
+      <Container>
+      </Container>
+
+      <Image src = {diagram} size = 'large'>
+      </Image>
       </Container>
       </div>
     );
