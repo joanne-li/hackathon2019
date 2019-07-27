@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Grid, Image, Segment} from 'semantic-ui-react'
 import axios from 'axios'
 import Item from './Item.js'
-
+import Dashboard from './Dashboard'
 
 
 class ProductList extends Component {
@@ -12,7 +12,7 @@ class ProductList extends Component {
     this.state = { products: [], productState: []}
   }
   componentDidMount(){
-    axios.get('https://inspired-victor-144517.appspot.com/product')
+    axios.get('https://api.jsonbin.io/b/5d3c1363ea04da211dc3767d')
       .then((result) => {
           this.setState({products: result.data.products})
             }
@@ -33,6 +33,7 @@ class ProductList extends Component {
       <Grid container columns={4}>
         {productItems}
       </Grid>
+      /*<Dashboard/>*/
       </div>
     );
   }

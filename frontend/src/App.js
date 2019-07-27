@@ -13,7 +13,7 @@ import Browse from './Browse';
 // import Login from './Login';
 // import Register from './Register';
 // import Cart from './Cart';
-// import Profile from './Profile';
+import Dashboard from './Dashboard';
 import Footer from './Footer';
 
 
@@ -25,6 +25,7 @@ class App extends Component {
         <Nav />
         <Route exact path='/' component={Home} />
         <Route path='/browse' component={Browse} />
+        <Route path ='/dashboard' component={Dashboard}/>
         <Footer />
 
       </div>
