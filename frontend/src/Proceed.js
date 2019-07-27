@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Grid, List, Image, Label, Menu, Table } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom'
+import HEREMap from 'here-maps-react'
 
 class Cart extends Component {
   constructor(props) {
@@ -64,6 +65,9 @@ class Cart extends Component {
       this.DecreaseItem();
    }
 
+
+
+
   render() {
 
     return (
@@ -76,6 +80,15 @@ class Cart extends Component {
       </Grid.Column>
       <Grid.Column width={2}></Grid.Column>
       </Grid>
+
+      <HEREMap
+        appId="FE8HUDOupfO7VqgfN-WM1qQkse8FN-ufB0JPWPxT_Jw"
+        appCode="econox"
+        center={{ lat: -12.0464, lng: -77.0428 }}
+        zoom={12}
+      />
+
+
 
       </div>
     );
