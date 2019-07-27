@@ -21,12 +21,5 @@ class Search extends Component {
     );
   }
 }
-const ContainerFunc = () => (
-    <Container>
-      <div>
-        testing container
-      </div>
-    </Container>
-);
 
 export default Search;
