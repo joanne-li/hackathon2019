@@ -1,4 +1,4 @@
-# CSESoc UNSW Hackathon 2019
+# Econox- Bringing convenience to sustainability
 
 Made by Alec Tan (@Alectan), Christine Bui (@crisb0), Damin Zhou (@damince), Joanne Li (@joanne-li) and Phoebe Zhou (@phebs). Made over the span of 24hrs in the CSESoc UNSW Hackathon 2019 (27 July - 28 July 2019).
 
