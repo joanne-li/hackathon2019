@@ -16,6 +16,7 @@ class Cart extends Component {
       </Grid.Column>
       <Grid.Column width={2}></Grid.Column>
       </Grid>
+      <Button><NavLink to="./" style={{color: 'white'}}>Done</NavLink></Button>
       </div>
     );
   }
